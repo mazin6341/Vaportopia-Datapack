@@ -1,1 +1,6 @@
-{ "values": [ "general:wilson/tick" ] }
+{
+    "values": [
+        "general:wilson/tick",
+        "events:blood_moon/spawn_logic"
+    ]
+}
