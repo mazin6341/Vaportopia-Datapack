@@ -1,0 +1,11 @@
+{
+  "criteria": {
+    "killed_wilson": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": { "type": "minecraft:chicken", "nbt": "{Tags:[\"Wilson\"]}" }
+      }
+    }
+  },
+  "rewards": { "function": "general:wilson/on_death" }
+}
