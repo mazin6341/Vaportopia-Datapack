@@ -25,9 +25,11 @@ execute as @e[tag=greenplains_miniboss,tag=!greenplains_alpha,distance=..20] run
 execute as @e[tag=greenplains_miniboss,tag=!greenplains_alpha,distance=..20] run attribute @s minecraft:generic.armor base set 14
 execute as @e[tag=greenplains_miniboss,tag=!greenplains_alpha,distance=..20] run attribute @s minecraft:generic.attack_damage base set 6.5
 execute as @e[tag=greenplains_miniboss,tag=!greenplains_alpha,distance=..20] run data merge entity @s {Health:120f}
+execute as @e[tag=greenplains_miniboss,tag=!greenplains_alpha,distance=..20] run attribute @s minecraft:generic.movement_speed base set 0.38
 
 # Apply stronger stats to Grove Alpha
 execute as @e[tag=greenplains_alpha,distance=..20] run attribute @s minecraft:generic.max_health base set 180
 execute as @e[tag=greenplains_alpha,distance=..20] run attribute @s minecraft:generic.armor base set 18
 execute as @e[tag=greenplains_alpha,distance=..20] run attribute @s minecraft:generic.attack_damage base set 8
 execute as @e[tag=greenplains_alpha,distance=..20] run data merge entity @s {Health:180f}
+execute as @e[tag=greenplains_alpha,distance=..20] run attribute @s minecraft:generic.movement_speed base set 0.40
