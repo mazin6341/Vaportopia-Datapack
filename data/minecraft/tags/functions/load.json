@@ -1,1 +1,6 @@
-{ "values": [ "shared:init" ] }
+{
+    "values": [ 
+        "shared:init",
+        "bossevents:load"
+    ]
+}

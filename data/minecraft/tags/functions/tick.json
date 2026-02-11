@@ -1,5 +1,6 @@
 {
     "values": [
-        "general:wilson/tick"
+        "general:wilson/tick",
+        "bossevents:tick"
     ]
 }
