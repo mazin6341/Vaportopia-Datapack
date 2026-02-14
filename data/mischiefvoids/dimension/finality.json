@@ -1,0 +1,12 @@
+{
+  "type": "mischiefvoids:finality_type",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "mischiefbiomes:finality_biome",
+      "lakes": false,
+      "features": false,
+      "layers": []
+    }
+  }
+}

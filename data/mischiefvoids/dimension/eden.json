@@ -1,0 +1,12 @@
+{
+  "type": "mischiefvoids:eden_type",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "mischiefbiomes:eden_biome",
+      "lakes": false,
+      "features": false,
+      "layers": []
+    }
+  }
+}

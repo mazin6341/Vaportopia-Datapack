@@ -1,0 +1,21 @@
+{
+  "type": "mischiefvoids:abyss_type",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "mischiefbiomes:abyss_biome",
+      "lakes": false,
+      "features": false,
+      "layers": [
+        {
+          "block": "minecraft:barrier",
+          "height": 1
+        },
+        {
+          "block": "minecraft:water",
+          "height": 20
+        }
+      ]
+    }
+  }
+}
