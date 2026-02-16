@@ -1,6 +1,7 @@
 {
     "values": [
         "general:wilson/tick",
+        "general:on_player_death",
         "bossevents:tick"
     ]
 }
