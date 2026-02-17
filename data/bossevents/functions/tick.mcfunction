@@ -34,18 +34,12 @@ execute if entity @e[tag=greenplains_mainboss] run scoreboard players add #range
 # Every 80 ticks (4 seconds), apply ranged punishment
 execute if entity @e[tag=greenplains_mainboss] if score #ranged ranged_timer matches 80.. run function bossevents:greenplains/mainboss_ranged_pressure
 
-# ------------------------------------------------
-# UNIVERSAL BOSS DISENGAGE TRACKING
-# ------------------------------------------------
-
 # Reset timer if player nearby (15 block combat radius)
 execute as @e[tag=boss_entity] at @s if entity @p[distance=..15] run scoreboard players set @s disengage_timer 0
 
 # Increase timer if no players nearby
 execute as @e[tag=boss_entity] at @s unless entity @p[distance=..15] run scoreboard players add @s disengage_timer 1
 
-# ------------------------------------------------
 # START REGEN AFTER 10 MINUTES (12000 ticks)
-# ------------------------------------------------
 
 execute as @e[tag=boss_entity,scores={disengage_timer=12000..}] run effect give @s minecraft:regeneration 5 1 true
