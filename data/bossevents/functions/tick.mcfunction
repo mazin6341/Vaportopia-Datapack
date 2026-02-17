@@ -68,3 +68,7 @@ execute as @e[tag=main_boss,tag=zone_forbiddenpeaks] store result score @s healt
 execute as @e[tag=main_boss,tag=zone_forbiddenpeaks,limit=1] store result bossbar bossevents:forbiddenpeaks_main value run data get entity @s Health 1
 execute as @e[tag=main_boss,tag=zone_forbiddenpeaks,limit=1] at @s run bossbar set bossevents:forbiddenpeaks_main players @a[distance=..60]
 execute if score #forbiddenpeaks_main forbiddenpeaks_boss_active matches 1 unless entity @e[tag=main_boss,tag=zone_forbiddenpeaks,nbt={DeathTime:0s}] run function bossevents:forbiddenpeaks/mainboss_defeated
+execute if score #forbiddenpeaks_miniboss forbiddenpeaks_boss_active matches 1 unless entity @e[tag=mini_boss,tag=zone_forbiddenpeaks,nbt={DeathTime:0s}] run function bossevents:forbiddenpeaks/miniboss_defeated
+
+#coloured forest boss
+execute if score #colouredforest_miniboss colouredforest_boss_active matches 1 unless entity @e[tag=mini_boss,tag=zone_colouredforest,nbt={DeathTime:0s}] run function bossevents:colouredforest/miniboss_defeated

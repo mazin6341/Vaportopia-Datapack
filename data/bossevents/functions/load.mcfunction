@@ -31,3 +31,7 @@ bossbar set bossevents:forbiddenpeaks_main color purple
 bossbar set bossevents:forbiddenpeaks_main style notched_20
 bossbar set bossevents:forbiddenpeaks_main max 1800
 bossbar set bossevents:forbiddenpeaks_main visible false
+
+#coloured forest stuff
+scoreboard objectives add colouredforest_boss_active dummy
+

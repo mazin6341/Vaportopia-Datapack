@@ -1,4 +1,5 @@
-scoreboard players set #forbiddenpeaks_miniboss boss_active 1
+scoreboard players set #forbiddenpeaks_miniboss forbiddenpeaks_boss_active 1
+
 tellraw @a {"text":"Dark chants echo through the Forbidden Peaks...","color":"dark_purple","bold":true}
 playsound minecraft:entity.warden.ambient master @a ~ ~ ~ 1 0.6
 

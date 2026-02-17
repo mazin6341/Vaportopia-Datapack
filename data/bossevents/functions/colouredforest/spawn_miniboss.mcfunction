@@ -1,0 +1,8 @@
+scoreboard players set #colouredforest_miniboss colouredforest_boss_active 1
+tellraw @a {"text":"The forest erupts in twisted laughter...","color":"light_purple","bold":true}
+playsound minecraft:entity.witch.ambient master @a ~ ~ ~ 1 0.7
+
+summon sweet_calamity:creaking_clown ~ ~1 ~ {CustomName:'{"text":"Creaking Clown","color":"gold","bold":true}',CustomNameVisible:1b,PersistenceRequired:1b,Tags:["boss_entity","mini_boss","zone_colouredforest","cf_spawned"],Attributes:[{Name:"minecraft:generic.max_health",Base:260},{Name:"minecraft:generic.attack_damage",Base:13},{Name:"minecraft:generic.armor",Base:8},{Name:"minecraft:generic.movement_speed",Base:0.45}],Health:260f,HandItems:[{id:"veloticurrencies:nullity_shard",Count:2b},{}],HandDropChances:[1.0f,0.0f]}
+# Spread them
+spreadplayers ~ ~ 6 14 false @e[tag=cf_spawned]
+tag @e[tag=cf_spawned] remove cf_spawned
