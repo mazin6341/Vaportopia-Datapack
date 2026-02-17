@@ -30,7 +30,7 @@ execute as @e[tag=boss_entity] at @s if entity @p[distance=..15] run scoreboard 
 execute as @e[tag=boss_entity] at @s unless entity @p[distance=..15] run scoreboard players add @s disengage_timer 1
 
 #Boss Entity Regen Function
-execute as @e[tag=boss_entity,scores={disengage_timer=12000..}] if score @s combat_timer matches 0 run effect give @s minecraft:regeneration 5 1 true
+execute as @e[tag=boss_entity,scores={disengage_timer=1200..}] if score @s combat_timer matches 0 run effect give @s minecraft:regeneration 5 1 true
 
 #Plains boss defeat detection
 execute if score #greenplains boss_active matches 1 unless entity @e[tag=main_boss,tag=zone_greenplains] run function bossevents:greenplains/mainboss_defeated
@@ -42,3 +42,29 @@ execute if score #greenplains_miniboss boss_active matches 1 unless entity @e[ta
 # Assign bossbar only to players within 40 blocks (plains)
 bossbar set bossevents:greenplains_main players @a
 execute as @e[tag=main_boss,tag=zone_greenplains,limit=1] at @s run bossbar set bossevents:greenplains_main players @a[distance=..40]
+
+#Deepforest miniboss defeat detect
+execute if score #deepforest_miniboss boss_active matches 1 unless entity @e[tag=mini_boss,tag=zone_deepforest] run function bossevents:deepforest/miniboss_defeated
+
+#Hp Tracking
+execute as @e[tag=main_boss,tag=zone_deepforest] store result score @s health run data get entity @s Health 1
+
+#phase triggers
+execute as @e[tag=main_boss,tag=zone_deepforest,tag=!phase2] if score @s health matches ..720 run function bossevents:deepforest/mainboss_phase2
+execute as @e[tag=main_boss,tag=zone_deepforest,tag=!phase3] if score @s health matches ..300 run function bossevents:deepforest/mainboss_phase3
+
+#hp bar updates
+execute as @e[tag=main_boss,tag=zone_deepforest,limit=1] store result bossbar bossevents:deepforest_main value run data get entity @s Health 1
+execute as @e[tag=main_boss,tag=zone_deepforest,limit=1] at @s run bossbar set bossevents:deepforest_main players @a[distance=..50]
+
+#defeat detect
+execute if score #deepforest_main deepforest_boss_active matches 1 unless entity @e[tag=main_boss,tag=zone_deepforest] run function bossevents:deepforest/mainboss_defeated
+
+# Deep Forest miniboss guaranteed nausea on hit
+execute as @a[nbt={HurtTime:1s}] at @s if entity @e[tag=mini_boss,tag=zone_deepforest,distance=..3] run effect give @s minecraft:nausea 5 2 true
+
+#Forbidden peaks boss
+execute as @e[tag=main_boss,tag=zone_forbiddenpeaks] store result score @s health run data get entity @s Health 1
+execute as @e[tag=main_boss,tag=zone_forbiddenpeaks,limit=1] store result bossbar bossevents:forbiddenpeaks_main value run data get entity @s Health 1
+execute as @e[tag=main_boss,tag=zone_forbiddenpeaks,limit=1] at @s run bossbar set bossevents:forbiddenpeaks_main players @a[distance=..60]
+execute if score #forbiddenpeaks_main forbiddenpeaks_boss_active matches 1 unless entity @e[tag=main_boss,tag=zone_forbiddenpeaks,nbt={DeathTime:0s}] run function bossevents:forbiddenpeaks/mainboss_defeated
