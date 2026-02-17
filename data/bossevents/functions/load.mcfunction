@@ -35,3 +35,12 @@ bossbar set bossevents:forbiddenpeaks_main visible false
 #coloured forest stuff
 scoreboard objectives add colouredforest_boss_active dummy
 
+scoreboard objectives add colouredforest_main_active dummy
+scoreboard objectives add amebaba_health dummy
+
+bossbar add bossevents:colouredforest_amebaba {"text":"AMEBABA","color":"dark_purple","bold":true}
+bossbar set bossevents:colouredforest_amebaba color purple
+bossbar set bossevents:colouredforest_amebaba style notched_20
+bossbar set bossevents:colouredforest_amebaba max 1000
+bossbar set bossevents:colouredforest_amebaba visible false
+

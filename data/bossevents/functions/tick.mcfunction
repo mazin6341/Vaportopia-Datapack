@@ -72,3 +72,10 @@ execute if score #forbiddenpeaks_miniboss forbiddenpeaks_boss_active matches 1 u
 
 #coloured forest boss
 execute if score #colouredforest_miniboss colouredforest_boss_active matches 1 unless entity @e[tag=mini_boss,tag=zone_colouredforest,nbt={DeathTime:0s}] run function bossevents:colouredforest/miniboss_defeated
+# Update AMEBABA bossbar health
+execute as @e[tag=main_boss,tag=zone_colouredforest,type=alexscaves:licowitch] store result score @s amebaba_health run data get entity @s Health 1
+execute as @e[tag=main_boss,tag=zone_colouredforest,type=alexscaves:licowitch,limit=1] store result bossbar bossevents:colouredforest_amebaba value run data get entity @s Health 1
+execute as @e[tag=main_boss,tag=zone_colouredforest,type=alexscaves:licowitch,limit=1] at @s run bossbar set bossevents:colouredforest_amebaba players @a[distance=..70]
+
+# Defeat condition (both witches dead)
+execute if score #colouredforest_main colouredforest_main_active matches 1 unless entity @e[tag=main_boss,tag=zone_colouredforest,nbt={DeathTime:0s}] run function bossevents:colouredforest/mainboss_defeated
