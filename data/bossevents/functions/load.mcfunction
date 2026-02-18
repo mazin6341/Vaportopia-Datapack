@@ -23,6 +23,7 @@ bossbar set bossevents:deepforest_main color red
 bossbar set bossevents:deepforest_main style notched_12
 bossbar set bossevents:deepforest_main max 1200
 bossbar set bossevents:deepforest_main visible false
+scoreboard objectives add deepforest_mini_active dummy
 
 #Forbidden Peaks Main Boss health bar
 scoreboard objectives add forbiddenpeaks_boss_active dummy
@@ -31,10 +32,10 @@ bossbar set bossevents:forbiddenpeaks_main color purple
 bossbar set bossevents:forbiddenpeaks_main style notched_20
 bossbar set bossevents:forbiddenpeaks_main max 1800
 bossbar set bossevents:forbiddenpeaks_main visible false
+scoreboard objectives add forbiddenpeaks_mini_active dummy
 
 #coloured forest stuff
 scoreboard objectives add colouredforest_boss_active dummy
-
 scoreboard objectives add colouredforest_main_active dummy
 scoreboard objectives add amebaba_health dummy
 
@@ -43,4 +44,5 @@ bossbar set bossevents:colouredforest_amebaba color purple
 bossbar set bossevents:colouredforest_amebaba style notched_20
 bossbar set bossevents:colouredforest_amebaba max 1000
 bossbar set bossevents:colouredforest_amebaba visible false
+scoreboard objectives add colouredforest_mini_active dummy
 

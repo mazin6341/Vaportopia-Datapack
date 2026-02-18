@@ -40,8 +40,7 @@ execute as @e[tag=main_boss,tag=zone_greenplains,limit=1] store result bossbar b
 execute if score #greenplains_miniboss boss_active matches 1 unless entity @e[tag=mini_boss,tag=zone_greenplains] run function bossevents:greenplains/miniboss_defeated
 
 # Assign bossbar only to players within 40 blocks (plains)
-bossbar set bossevents:greenplains_main players @a
-execute as @e[tag=main_boss,tag=zone_greenplains,limit=1] at @s run bossbar set bossevents:greenplains_main players @a[distance=..40]
+execute as @e[tag=main_boss,tag=zone_greenplains,limit=1] at @s run bossbar set bossevents:greenplains_main players @a[distance=..60]
 
 #Deepforest miniboss defeat detect
 execute if score #deepforest_miniboss boss_active matches 1 unless entity @e[tag=mini_boss,tag=zone_deepforest] run function bossevents:deepforest/miniboss_defeated
@@ -55,7 +54,7 @@ execute as @e[tag=main_boss,tag=zone_deepforest,tag=!phase3] if score @s health 
 
 #hp bar updates
 execute as @e[tag=main_boss,tag=zone_deepforest,limit=1] store result bossbar bossevents:deepforest_main value run data get entity @s Health 1
-execute as @e[tag=main_boss,tag=zone_deepforest,limit=1] at @s run bossbar set bossevents:deepforest_main players @a[distance=..50]
+execute as @e[tag=main_boss,tag=zone_deepforest,limit=1] at @s run bossbar set bossevents:deepforest_main players @a[distance=..60]
 
 #defeat detect
 execute if score #deepforest_main deepforest_boss_active matches 1 unless entity @e[tag=main_boss,tag=zone_deepforest] run function bossevents:deepforest/mainboss_defeated
@@ -75,7 +74,7 @@ execute if score #colouredforest_miniboss colouredforest_boss_active matches 1 u
 # Update AMEBABA bossbar health
 execute as @e[tag=main_boss,tag=zone_colouredforest,type=alexscaves:licowitch] store result score @s amebaba_health run data get entity @s Health 1
 execute as @e[tag=main_boss,tag=zone_colouredforest,type=alexscaves:licowitch,limit=1] store result bossbar bossevents:colouredforest_amebaba value run data get entity @s Health 1
-execute as @e[tag=main_boss,tag=zone_colouredforest,type=alexscaves:licowitch,limit=1] at @s run bossbar set bossevents:colouredforest_amebaba players @a[distance=..70]
+execute as @e[tag=main_boss,tag=zone_colouredforest,type=alexscaves:licowitch,limit=1] at @s run bossbar set bossevents:colouredforest_amebaba players @a[distance=..60]
 
 # Defeat condition (both witches dead)
 execute if score #colouredforest_main colouredforest_main_active matches 1 unless entity @e[tag=main_boss,tag=zone_colouredforest,nbt={DeathTime:0s}] run function bossevents:colouredforest/mainboss_defeated

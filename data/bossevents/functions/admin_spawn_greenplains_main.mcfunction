@@ -1,0 +1,4 @@
+execute if score #greenplains_main boss_active matches 1 run tellraw @s {"text":"ERROR: GreenPlains boss already active.","color":"red","bold":true}
+execute if score #greenplains_main boss_active matches 0 unless entity @e[type=minecraft:marker,tag=spawn_greenplains_main] run tellraw @s {"text":"ERROR: No GreenPlains spawn marker found.","color":"red","bold":true}
+execute if score #greenplains_main boss_active matches 0 as @e[type=minecraft:marker,tag=spawn_greenplains_main,limit=1,sort=nearest] at @s run function bossevents:greenplains/spawn_mainboss
+execute if score #greenplains_main boss_active matches 0 run kill @e[type=minecraft:marker,tag=spawn_greenplains_main,limit=1,sort=nearest]

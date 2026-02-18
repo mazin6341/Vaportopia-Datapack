@@ -1,0 +1,4 @@
+execute if score #deepforest_main deepforest_boss_active matches 1 run tellraw @s {"text":"ERROR: Deep Forest boss already active.","color":"red","bold":true}
+execute if score #deepforest_main deepforest_boss_active matches 0 unless entity @e[type=minecraft:marker,tag=spawn_deepforest_main] run tellraw @s {"text":"ERROR: No Deep Forest spawn marker found.","color":"red","bold":true}
+execute if score #deepforest_main deepforest_boss_active matches 0 as @e[type=minecraft:marker,tag=spawn_deepforest_main,limit=1,sort=nearest] at @s run function bossevents:deepforest/spawn_mainboss
+execute if score #deepforest_main deepforest_boss_active matches 0 run kill @e[type=minecraft:marker,tag=spawn_deepforest_main,limit=1,sort=nearest]
