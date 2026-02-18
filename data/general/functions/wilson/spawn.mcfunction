@@ -1,5 +1,5 @@
 # 1. Check if the marker exists. If NOT, tell admins and stop.
-execute unless entity @e[tag=wilson_spawn_point] run tellraw @a {"text":"[ERROR] No 'wilson_spawn_point' marker found! Bounty failed to start.","color":"red"}
+execute unless entity @e[tag=wilson_spawn_point] run tellraw @s {"text":"[ERROR] No 'wilson_spawn_point' marker found! Bounty failed to start.","color":"red"}
 execute unless entity @e[tag=wilson_spawn_point] run return 0
 
 # 2. Summon Wilson at the marker's location
