@@ -78,3 +78,17 @@ execute as @e[tag=main_boss,tag=zone_colouredforest,type=alexscaves:licowitch,li
 
 # Defeat condition (both witches dead)
 execute if score #colouredforest_main colouredforest_main_active matches 1 unless entity @e[tag=main_boss,tag=zone_colouredforest,nbt={DeathTime:0s}] run function bossevents:colouredforest/mainboss_defeated
+
+#WORKSHOP STUFF
+# VERSION 1 bossbar
+execute as @e[tag=workshop_v1,limit=1] store result bossbar bossevents:workshop_v1 value run data get entity @s Health 1
+execute as @e[tag=workshop_v1,limit=1] at @s run bossbar set bossevents:workshop_v1 players @a[distance=..60]
+
+# VERSION 2 bossbar
+execute as @e[tag=workshop_v2,limit=1] store result bossbar bossevents:workshop_v2 value run data get entity @s Health 1
+execute as @e[tag=workshop_v2,limit=1] at @s run bossbar set bossevents:workshop_v2 players @a[distance=..60]
+
+# Defeat check
+execute if score #workshop_main workshop_boss_active matches 1 unless entity @e[tag=main_boss,tag=zone_workshop,nbt={DeathTime:0s}] run function bossevents:workshop/mainboss_defeated
+# Workshop miniboss defeat check
+execute if score #workshop_mini workshop_mini_active matches 1 unless entity @e[tag=mini_boss,tag=zone_workshop,nbt={DeathTime:0s}] run function bossevents:workshop/miniboss_defeated

@@ -46,3 +46,23 @@ bossbar set bossevents:colouredforest_amebaba max 1000
 bossbar set bossevents:colouredforest_amebaba visible false
 scoreboard objectives add colouredforest_mini_active dummy
 
+#workshop stuff
+scoreboard objectives add workshop_boss_active dummy
+scoreboard objectives add workshop_mini_active dummy
+
+#marker stuff
+scoreboard players set #greenplains_main boss_active 0
+scoreboard players set #greenplains_herd herd_active 0
+
+scoreboard players set #deepforest_main deepforest_boss_active 0
+scoreboard players set #deepforest_mini deepforest_mini_active 0
+
+scoreboard players set #forbiddenpeaks_main forbiddenpeaks_boss_active 0
+scoreboard players set #forbiddenpeaks_mini forbiddenpeaks_mini_active 0
+
+scoreboard players set #colouredforest_main colouredforest_main_active 0
+scoreboard players set #colouredforest_mini colouredforest_mini_active 0
+
+scoreboard players set #workshop_main workshop_boss_active 0
+scoreboard players set #workshop_mini workshop_mini_active 0
+scoreboard players set #workshop_enrage workshop_enrage 0
